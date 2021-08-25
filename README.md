@@ -13,7 +13,7 @@ This should be containerized and utilize `docker-compose`, and should have a REA
 
 ## This project should satisfy the following criteria:
 
-- [x] As a user, I want to see a page-heading at the top of the site that clearly shows me that I am at the SDI Library page.
+- [ ] As a user, I want to see a page-heading at the top of the site that clearly shows me that I am at the SDI Library page.
 
 - [ ] As a user, I want to be able to see a list of every book in the library so that I can browse the selections, including:
     * Book Title,
@@ -23,9 +23,9 @@ This should be containerized and utilize `docker-compose`, and should have a REA
 
     This story is so big that you should break it up into smaller subtasks:
 
-  - [x] React renders list of dummy data for books
-  - [x] React makes AJAX (__Asynchronous JavaScript and XML__, e.g. `fetch()`) call to Express endpoint
-  - [x] Create Express endpoint: `/api/books`    
+  - [ ] React renders list of dummy data for books
+  - [ ] React makes AJAX (__Asynchronous JavaScript and XML__, e.g. `fetch()`) call to Express endpoint
+  - [ ] Create Express endpoint: `/api/books`    
   - [ ] Create Library database and `books` table
   - [ ] Use knex to seed and return books from database to Express
   - [ ] Returns an array of book objects from Express endpoint
