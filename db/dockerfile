@@ -1,0 +1,16 @@
+# FROM postgres:latest
+
+# WORKDIR /db
+
+# EXPOSE 5432
+
+# COPY . /db
+
+
+
+# ENV POSTGRES_USER=postgres
+# ENV POSTGRES_PASSWORD=docker
+# ENV POSTGRES_DB=librarydb
+
+
+# CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
