@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest tests/index.test.js --watch --collect-coverage --detect-open-handles"
+  },
   "dependencies": {
     "cors": "^2.8.5",
+    "express": "^4.17.1",
     "knex": "^0.95.10",
     "pg": "^8.7.1"
   }

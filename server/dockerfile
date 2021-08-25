@@ -6,6 +6,8 @@ COPY . /src/app
 
 EXPOSE 8080
 
+ENV DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+
 RUN yarn install
 
 CMD [ "/var/bin", "./scripts/entrypoint.sh" ]

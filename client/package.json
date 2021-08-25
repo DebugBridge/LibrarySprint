@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test src/tests/ --watch --collect-coverage --detect-open-handles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
