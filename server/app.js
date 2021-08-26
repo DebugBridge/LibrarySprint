@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const cors = require('cors');
+const knex = require('knex')(require('./knexfile').development);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -9,7 +10,19 @@ app.use(cors({ origin: 'http://localhost:3000', methods: 'GET, POST, PATCH, PUT,
 
 app
   .get('/books/all', async (req, res) => {
-    res.send({ message: 'Hit  /books/all' });
+    try {
+      const allBooks = await knex('books').select('*');
+      res.send({
+        message: 'Hit  /books/all',
+        books: allBooks,
+      });
+    } catch (err) {
+      if (err.status === 404) {
+        const error = new Error();
+        error.message = 'Can\'t find resources';
+        res.send(error);
+      }
+    }
   })
   .get('/books/:isbn', async (req, res) => {
     res.send({ message: `Hit  /books/:isbn: ${req.params.isbn}` });
