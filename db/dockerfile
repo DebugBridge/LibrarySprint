@@ -13,4 +13,4 @@ ENV POSTGRES_PASSWORD=docker
 ENV POSTGRES_DB=librarydb
 
 
-CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
+# CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
