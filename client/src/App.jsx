@@ -12,7 +12,6 @@ const App = () => {
   React.useEffect(() => {
     const helper = async () => {
       const books = await getAllBooks();
-      console.log('wat', books.data.books);
       setBooksArray(books.data.books);
     };
     helper();
