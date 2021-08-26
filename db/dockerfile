@@ -14,3 +14,4 @@ ENV POSTGRES_DB=librarydb
 
 
 # CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
+CMD ["postgres"]

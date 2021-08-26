@@ -11,5 +11,7 @@
         "ecmaVersion": 12
     },
     "rules": {
+        "indent": [1, 4],
+        "quotes": [1, "single"]
     }
 }
