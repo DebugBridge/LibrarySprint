@@ -1,6 +1,7 @@
+/// <reference types="cypress" />
 describe('library', () => {
-    beforeEach(() => {
-        cy.visit('/')
-        cy.viewport(1500, 1500)
-    })
-})
+  beforeEach(() => {
+    cy.visit('/');
+    cy.viewport(1500, 1500);
+  });
+});

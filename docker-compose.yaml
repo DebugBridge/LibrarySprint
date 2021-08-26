@@ -1,0 +1,45 @@
+version: "3.9"
+services:
+  db:
+    image: 'postgres:latest'
+    container_name: library-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: librarydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/pg:/var/lib/postgresql/data
+    networks:
+      - library-network
+  server:
+    image: library-server
+    container_name: library-server
+    build: ./server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/src/app
+    depends_on:
+      - db
+    networks:
+      - library-network
+    environment:
+      DB_CONNECTION_STRING: postgres://postgres:docker@db:5432/librarydb
+    command: sh -c "yarn run knex migrate:latest && yarn run knex seed:run && yarn start"
+  client:
+    image: library-client
+    container_name: library-client
+    build: ./client
+    ports:
+    - "3000:3000"
+    networks:
+      - library-network
+    volumes:
+      - ./client:/src/app
+    depends_on:
+      - server
+networks:
+  library-network:
+    driver: "bridge"
