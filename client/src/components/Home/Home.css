@@ -1,0 +1,17 @@
+/* Error: Nothing may be indented beneath a @import rule.
+ *   ,
+ * 2 |     list
+ *   |     ^
+ *   '
+ *   src/components/Home/Home.sass 2:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Nothing may be indented beneath a @import rule.\a   \2577 \a 2 \2502      list\a   \2502      ^\a   \2575 \a   src/components/Home/Home.sass 2:5  root stylesheet";
+}
