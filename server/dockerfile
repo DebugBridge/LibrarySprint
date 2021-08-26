@@ -8,6 +8,8 @@ EXPOSE 8080
 
 ENV DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
 
+RUN npm install -g yarn
+
 RUN yarn install
 
 CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
