@@ -8,11 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({ origin: 'http://localhost:3000', methods: 'GET, POST, PATCH, PUT, DELETE' }));
 
-app.get('/api/books/all', async (req, res) => {
+app.get('/books/all', async (req, res) => {
   try {
     const allBooks = await knex('books').select('*');
     res.send({
-      message: 'Hit  /api/books/all',
+      message: 'Hit  /books/all',
       books: allBooks,
     });
   } catch (err) {
@@ -22,7 +22,7 @@ app.get('/api/books/all', async (req, res) => {
       res.send(error);
     }
   }
-})
+});
 
 // app.get('/api/books/:bookId', async (req, res) => {
 //   try {
