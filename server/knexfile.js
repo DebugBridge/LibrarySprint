@@ -2,8 +2,8 @@
 
 module.exports = {
 
-  development: {
-    client: 'pg',
-    connection: process.env.DB_CONNECTION_STRING,
-  },
+    development: {
+        client: 'pg',
+        connection: process.env.DB_CONNECTION_STRING,
+    },
 };

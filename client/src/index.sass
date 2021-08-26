@@ -1,0 +1,23 @@
+$font-stack: Helvetica, sans-serif
+$primary-color-gradient: linear-gradient(#5e8c61)
+$primary-color: #4e6151
+$secondary-color: #C7D3BF
+$tertiary-color: #566158
+$accent-color-dark: #566158
+$accent-color-light: #F79B09
+
+@mixin flexer($direction, $willWrap, $organize, $layout)
+    display: flex
+    flex-direction: $direction
+    flex-wrap: $willWrap
+    #{$organize}: $layout
+
+@mixin border-rounding
+    border-radius: .25em
+
+@mixin react-links
+    text-decoration: none
+    color: black
+
+.react-links
+    @include react-links

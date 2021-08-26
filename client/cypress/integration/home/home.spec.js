@@ -10,4 +10,8 @@ describe('library', () => {
     it('displays a header', () => {
         cy.get('[data-cy="header"]');
     });
+
+    it('displays a list of books', () => {
+        cy.get('[data-cy="book-container"]');
+    });
 });
