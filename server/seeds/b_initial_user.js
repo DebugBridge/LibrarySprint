@@ -1,13 +1,14 @@
+const faker = require('faker');
 
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('users').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('users').insert([
-        {username: 'DevilDog772'},
-        {username: 'QuickSteel2'},
-        {username: 'IfItAiNTbRoKeDoNtFiXiT'}
-      ]);
-    });
-};
+const createFakeUser = () => ({
+  username: faker.animal.cetacean(),
+});
+
+const fakeUsers = [];
+
+for (let i = 0; i < 30; i += 1) {
+  fakeUsers.push(createFakeUser());
+}
+
+exports.seed = (knex) => knex('users').del()
+  .then(() => knex('users').insert(fakeUsers));

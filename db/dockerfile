@@ -1,16 +1,16 @@
-# FROM postgres:latest
+FROM postgres:latest
 
-# WORKDIR /db
+WORKDIR /db
 
-# EXPOSE 5432
+EXPOSE 5432
 
-# COPY . /db
-
-
-
-# ENV POSTGRES_USER=postgres
-# ENV POSTGRES_PASSWORD=docker
-# ENV POSTGRES_DB=librarydb
+COPY . /db
 
 
-# CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=docker
+ENV POSTGRES_DB=librarydb
+
+
+CMD [ "/bin/bash", "./scripts/entrypoint.sh" ]
