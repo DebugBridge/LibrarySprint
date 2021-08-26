@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "jest tests/index.test.js --watch --collect-coverage --detect-open-handles"
   },
   "dependencies": {
@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "faker": "^5.5.3",
     "knex": "^0.95.10",
+    "nodemon": "^2.0.12",
     "pg": "^8.7.1"
   },
   "devDependencies": {
